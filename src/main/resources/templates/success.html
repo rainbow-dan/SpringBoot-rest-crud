@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>成功</h1>
+<div th:text="${hello}">这里显示的是欢迎信息</div>
+<hr/>
+<div th:text="${hello}"></div>
+<div th:utext="${hello}"></div>
+<hr/>
+<!--这种遍历每次都会生成一个H4标签，集合里有多少个就会生成多少个-->
+<h4  th:text="${user}" th:each="user:${users}" ></h4>
+<hr/>
+<!--这种只会生成一个H3标签-->
+<h3>
+    <span th:each="user:${users}">[[${user}]]
+    </span>
+</h3>
+
+</body>
+</html>
